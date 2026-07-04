@@ -1,0 +1,73 @@
+design_prompt:
+  meta:
+    name: "dark-tech-minimal-mood"
+    purpose: "配色・雰囲気のみを抽出した再利用可能なデザインシステム定義（文言・レイアウトは非対象）"
+    portable: true
+
+  mood:
+    keywords:
+      - ダークモード
+      - ミニマル
+      - テック / プロダクト感
+      - 落ち着いた高級感
+      - フラットだが明暗差で奥行きを出す
+      - ノイズが少なく静か
+    tone: >
+      派手な装飾より余白と統一感を優先する、静かで信頼感のあるプロフェッショナルトーン。
+      主張は一箇所（アクセントカラー）に絞り、それ以外は抑制する。
+
+  color_system:
+    background:
+      role: "画面全体の土台となる最も暗い面"
+      character: "ほぼ黒に近いネイビー〜チャコール系"
+    surface:
+      role: "カードやセクションを背景から浮かせる面"
+      character: "背景よりわずかに明るいダークトーン、彩度は上げない"
+    accent:
+      role: "CTA・リンク・強調タグなど『行動を促す要素』専用の色"
+      character: "彩度高めの単色。全体に対して使用面積は小さく保つ"
+      usage_rule: "画面内の有彩色はこの1色のみに絞り、使用比率は全体の5%以下"
+    text_primary:
+      role: "見出し・本文の主役"
+      character: "オフホワイト（純白は避け、わずかに背景と馴染ませる）"
+    text_secondary:
+      role: "補足説明・キャプション・メタ情報"
+      character: "低コントラストのグレイッシュトーン"
+    border_divider:
+      role: "面と面の境界を示す控えめな線"
+      character: "背景に溶け込む極薄グレー、存在を主張しない"
+
+  typography_feel:
+    family_impression: "サンセリフ、システムフォント寄りの視認性重視"
+    hierarchy: "サイズと太さの差だけで階層を作る（大胆な見出し→標準の本文→さらに小さいメタ情報）"
+    heading_weight: "太め"
+    body_weight: "標準〜軽め"
+    letter_spacing: "見出しはやや広めにして品を出す"
+
+  shape_and_texture:
+    corner_radius: "小〜中程度の角丸（鋭角すぎず丸すぎない）"
+    elevation: "強い影は使わず、明暗差と細い境界線のみで立体感を表現"
+    whitespace_density: "要素間の余白は広め、詰め込みすぎない"
+
+  interaction_mood:
+    hover: "わずかな浮き上がり・拡大などマイクロな反応に留める"
+    transition_timing: "0.15〜0.3秒程度の滑らかなフェード/移動"
+    detail_pattern: "詳細情報は別ページ遷移ではなく、その場にオーバーレイして見せる"
+
+  component_archetypes:
+    - name: "sticky_translucent_header"
+      description: "スクロール追従する半透明ヘッダー。ぼかしと下線で背景から分離"
+    - name: "centered_hero_statement"
+      description: "中央寄せの短いメッセージ＋控えめなCTAボタン1つ"
+    - name: "uniform_card_grid"
+      description: "同一サイズのカードが並ぶグリッド。画像／短文情報／タグの三層構造"
+    - name: "pill_tag_label"
+      description: "小さな角丸ピル型ラベルでカテゴリや属性を軽く示す"
+    - name: "overlay_detail_view"
+      description: "クリックで背景を暗く落として詳細を重ね見せる（モーダル的な演出）"
+
+  portability_notes:
+    - "業種・コンテンツ固有の名詞やコピー文言、画像内容は一切含まない"
+    - "グリッド列数・余白のpx値などレイアウトの数値仕様は意図的に除外"
+    - "色は役割（背景／面／アクセント／文字）で定義しているため、対象サイトの意味に合わせて再マッピングするだけで流用可能"
+    - "例：観光・旅行系サイトに適用する場合 → background/surfaceの暗色トーンはそのまま流用し、accentのみ観光地らしい色（テラコッタ・ターコイズ等）へ差し替えると雰囲気を保ったまま転用できる"

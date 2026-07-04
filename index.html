@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MY AI WORKS | AIプロダクトポートフォリオ</title>
+<meta name="description" content="生成AIを活用して開発したアプリ・デザインの成果物をまとめたポートフォリオサイト">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">MY AI WORKS</div>
+  <nav>
+    <a href="#gallery">実績</a>
+    <a href="#about">About</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>AIと共に作ったプロダクト集</h1>
+    <p>生成AIを活用して開発したアプリ・デザインの成果物をまとめています</p>
+    <a class="cta" href="#gallery">実績を見る ↓</a>
+  </section>
+
+  <section id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">実績ギャラリー</h2>
+    <div class="gallery">
+
+      <button type="button" class="card" data-project="0">
+        <img src="assets/images/bracket-visualizer.jpeg" alt="大会トーナメント表 可視化アプリのスクリーンショット" loading="lazy">
+        <span class="info">
+          <span class="card-title">大会トーナメント表 可視化アプリ</span>
+          <span class="card-desc">試合結果を自動反映するブラケット表示ツール</span>
+          <span class="tags"><span class="tag">Claude Code</span><span class="tag">React</span></span>
+        </span>
+      </button>
+
+      <button type="button" class="card" data-project="1">
+        <img src="assets/images/trophy-landing.jpeg" alt="優勝トロフィー演出ページのスクリーンショット" loading="lazy">
+        <span class="info">
+          <span class="card-title">優勝トロフィー演出ページ</span>
+          <span class="card-desc">大会の優勝カップを主役にしたランディングページ</span>
+          <span class="tags"><span class="tag">Midjourney</span><span class="tag">CSS</span></span>
+        </span>
+      </button>
+
+      <button type="button" class="card" data-project="2">
+        <img src="assets/images/player-collage.jpeg" alt="注目選手紹介コラージュのスクリーンショット" loading="lazy">
+        <span class="info">
+          <span class="card-title">注目選手紹介コラージュ</span>
+          <span class="card-desc">複数選手を1枚に合成する紹介カード生成機能</span>
+          <span class="tags"><span class="tag">ChatGPT</span><span class="tag">画像合成</span></span>
+        </span>
+      </button>
+
+      <button type="button" class="card" data-project="3">
+        <img src="assets/images/hero-visual.jpeg" alt="大会トップビジュアルのスクリーンショット" loading="lazy">
+        <span class="info">
+          <span class="card-title">大会トップビジュアル</span>
+          <span class="card-desc">スタジアム背景とトロフィーを合成したヒーロー画像</span>
+          <span class="tags"><span class="tag">Claude</span><span class="tag">画像生成</span></span>
+        </span>
+      </button>
+
+    </div>
+  </section>
+
+  <section id="about" class="about" aria-labelledby="about-heading">
+    <h2 id="about-heading">About</h2>
+    <p>生成AIツールを組み合わせてWebアプリやビジュアルを制作しています。企画からコーディング、画像生成までAIと協働して進めるスタイルが得意です。</p>
+    <div class="skills">
+      <span class="tag">Claude Code</span>
+      <span class="tag">ChatGPT</span>
+      <span class="tag">Midjourney</span>
+      <span class="tag">React</span>
+      <span class="tag">HTML/CSS</span>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <p>お問い合わせ： example@example.com</p>
+  <p>© 2026 MY AI WORKS</p>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+  <div class="modal-content">
+    <img id="modal-img" src="" alt="">
+    <div class="modal-body">
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <button type="button" class="close-btn" id="close-btn">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
