@@ -12,7 +12,7 @@ const projects = [
   {
     img: "assets/images/player-collage.jpeg",
     title: "注目選手紹介コラージュ",
-    desc: "複数の選手写真を1枚のビジュアルに合成し、注目カードとして紹介する機能です。"
+    desc: "複数の選手アイコンを1枚のビジュアルに合成し、注目カードとして紹介する機能です。"
   },
   {
     img: "assets/images/hero-visual.jpeg",
