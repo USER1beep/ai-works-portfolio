@@ -8,8 +8,9 @@ let lastFocused = null;
 
 function openModal(card) {
   const img = card.querySelector("img");
-  const title = card.querySelector(".card-title").textContent;
-  const desc = card.querySelector(".card-desc").textContent;
+  const title = card.querySelector(".card-title")?.textContent;
+  const desc = card.querySelector(".card-desc")?.textContent;
+  if (!img || !title || !desc) return;
   modalImg.src = img.src;
   modalImg.alt = img.alt;
   modalTitle.textContent = title;
@@ -38,9 +39,20 @@ document.addEventListener("keydown", (e) => {
   if (modal.hidden) return;
   if (e.key === "Escape") closeModal();
   if (e.key === "Tab") {
-    // モーダル内でフォーカス可能なのは閉じるボタンのみのため、Tab/Shift+Tabとも
-    // 閉じるボタンに固定してモーダル外(背後のヘッダー等)へフォーカスが漏れないようにする
-    e.preventDefault();
-    closeBtn.focus();
+    // モーダル内のフォーカス可能要素の先頭/末尾でTabを折り返し、
+    // 背後のヘッダー等にフォーカスが漏れないようにする
+    const focusable = modal.querySelectorAll(
+      'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 });

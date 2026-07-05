@@ -7,6 +7,7 @@
   --text:#e6e9ef;
   --sub:#8b93a7;
   --border:#232838;
+  /* --accentは白文字を乗せるとAAコントラスト未達のため、CTAボタン背景専用に別変数を用意 */
   --accent-cta:#2563eb;
   --ease:.2s ease;
 }
